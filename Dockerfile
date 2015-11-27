@@ -1,5 +1,5 @@
 # Base Image
-FROM koyadume/docker-tomcat:dockerhub
+FROM koyadume/docker-tomcat:dockerhub-8.0.28
 
 # Maintainer
 MAINTAINER Shailendra Singh <shailendra_01@outlook.com>
