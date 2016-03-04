@@ -12,15 +12,15 @@ ENV TURBINE_VERSION 1.0-rc1
 RUN rm conf/server.xml
 
 # Misc
-ADD https://github.com/koyadume/piston-core/releases/download/$PISTON_CORE_VERSION/server.xml conf/
+ADD https://github.com/pistonportal/piston-core/releases/download/$PISTON_CORE_VERSION/server.xml conf/
 ADD http://central.maven.org/maven2/org/mariadb/jdbc/mariadb-java-client/1.2.0/mariadb-java-client-1.2.0.jar lib/
 
 # Piston core
-ADD https://github.com/koyadume/piston-core/releases/download/$PISTON_CORE_VERSION/piston-core-$PISTON_CORE_VERSION-turbine-$TURBINE_VERSION.war webapps/piston.war
+ADD https://github.com/pistonportal/piston-core/releases/download/$PISTON_CORE_VERSION/piston-core-$PISTON_CORE_VERSION-turbine-$TURBINE_VERSION.war webapps/piston.war
 
 # Services
-ADD https://github.com/koyadume/piston-core/releases/download/$PISTON_CORE_VERSION/piston-service-$PISTON_CORE_VERSION.war webapps/piston-service.war
-ADD https://github.com/koyadume/custom-turbine/releases/download/$TURBINE_VERSION/turbine-service-$TURBINE_VERSION.war webapps/bolt-service.war
-ADD https://github.com/koyadume/admin-steam/releases/download/1.3/steam-service-1.3.war webapps/steam-service.war
-ADD https://github.com/koyadume/custom-userManagement/releases/download/1.2/userMgmt-service-1.2.war webapps/userMgmt-service.war
+ADD https://github.com/pistonportal/piston-core/releases/download/$PISTON_CORE_VERSION/piston-service-$PISTON_CORE_VERSION.war webapps/piston-service.war
+ADD https://github.com/pistonportal/custom-turbine/releases/download/$TURBINE_VERSION/turbine-service-$TURBINE_VERSION.war webapps/bolt-service.war
+ADD https://github.com/pistonportal/admin-steam/releases/download/1.3/steam-service-1.3.war webapps/steam-service.war
+ADD https://github.com/pistonportal/custom-userManagement/releases/download/1.2/userMgmt-service-1.2.war webapps/userMgmt-service.war
 
