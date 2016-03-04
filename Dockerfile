@@ -20,7 +20,7 @@ ADD https://github.com/pistonportal/piston-core/releases/download/$PISTON_CORE_V
 
 # Services
 ADD https://github.com/pistonportal/piston-core/releases/download/$PISTON_CORE_VERSION/piston-service-$PISTON_CORE_VERSION.war webapps/piston-service.war
-ADD https://github.com/pistonportal/custom-turbine/releases/download/$TURBINE_VERSION/turbine-service-$TURBINE_VERSION.war webapps/bolt-service.war
+ADD https://github.com/pistonportal/custom-turbine/releases/download/$TURBINE_VERSION/turbine-service-$TURBINE_VERSION.war webapps/turbine-service.war
 ADD https://github.com/pistonportal/admin-steam/releases/download/1.3/steam-service-1.3.war webapps/steam-service.war
 ADD https://github.com/pistonportal/custom-userManagement/releases/download/1.2/userMgmt-service-1.2.war webapps/userMgmt-service.war
 
