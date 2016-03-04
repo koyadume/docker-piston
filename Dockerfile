@@ -1,19 +1,26 @@
 # Base Image
-FROM koyadume/docker-tomcat:dockerhub-8.0.28
+FROM koyadume/tomcat:8.0.32
 
 # Maintainer
 MAINTAINER Shailendra Singh <shailendra_01@outlook.com>
 
 WORKDIR $CATALINA_HOME
 
+ENV PISTON_CORE_VERSION 2.3
+ENV TURBINE_VERSION 1.0-rc1
+
 RUN rm conf/server.xml
 
-ADD https://github.com/koyadume/piston-core/releases/download/2.2/server.xml conf/
+# Misc
+ADD https://github.com/koyadume/piston-core/releases/download/$PISTON_CORE_VERSION/server.xml conf/
 ADD http://central.maven.org/maven2/org/mariadb/jdbc/mariadb-java-client/1.2.0/mariadb-java-client-1.2.0.jar lib/
-ADD https://github.com/koyadume/piston-core/releases/download/2.2/piston-core-2.2-bolt-1.1-rc1.war webapps/piston.war
-ADD https://github.com/koyadume/piston-core/releases/download/2.2/piston-service-2.2.war webapps/piston-service.war
-ADD https://github.com/koyadume/custom-bolt/releases/download/1.1-rc1/bolt-service-1.1-rc1.war webapps/bolt-service.war
-ADD https://github.com/koyadume/admin-steam/releases/download/1.1/steam-service-1.1.war webapps/steam-service.war
-ADD https://github.com/koyadume/custom-userManagement/releases/download/1.1/userMgmt-service-1.1.war webapps/userMgmt-service.war
 
+# Piston core
+ADD https://github.com/koyadume/piston-core/releases/download/$PISTON_CORE_VERSION/piston-core-$PISTON_CORE_VERSION-turbine-$TURBINE_VERSION.war webapps/piston.war
+
+# Services
+ADD https://github.com/koyadume/piston-core/releases/download/$PISTON_CORE_VERSION/piston-service-$PISTON_CORE_VERSION.war webapps/piston-service.war
+ADD https://github.com/koyadume/custom-turbine/releases/download/$TURBINE_VERSION/turbine-service-$TURBINE_VERSION.war webapps/bolt-service.war
+ADD https://github.com/koyadume/admin-steam/releases/download/1.3/steam-service-1.3.war webapps/steam-service.war
+ADD https://github.com/koyadume/custom-userManagement/releases/download/1.2/userMgmt-service-1.2.war webapps/userMgmt-service.war
 
